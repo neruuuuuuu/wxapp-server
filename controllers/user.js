@@ -3,6 +3,7 @@ const Users = require('../dao/user')
 module.exports = {
   // 保存用户信息
   saveUserInfo: function (obj) {
+    console.log('开始保存用户信息')
     const userInfo = obj.userInfo || {}
     const session_key = obj.session_key || ''
     const skey = obj.skey || ''

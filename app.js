@@ -1,7 +1,7 @@
 const express = require('express')
 const createError = require('http-errors')
 
-const loginRouter = require('/routers/login')
+const loginRouter = require('./routers/login')
 const bookRouter = require('./routers/book')
 const userRouter = require('./routers/user')
 const commentRouter = require('./routers/comment')
@@ -11,11 +11,11 @@ const { authorizeMiddleware } = require('./middleware/auth')
 
 var app = express()
 
-app.use('/login', loginRouter)
+app.use('/login', authorizeMiddleware, loginRouter)
 app.use('/api/book', bookRouter)
 app.use('/api/user', userRouter)
 app.use('/api/comment', commentRouter)
-qpp.use('/api/order', orderRouter)
+app.use('/api/order', orderRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello world')

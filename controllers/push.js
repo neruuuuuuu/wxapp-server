@@ -1,5 +1,5 @@
 const Push = require('../dao/push')
-const Users = require('../dao/users')
+const Users = require('../dao/user')
 const http = require('axios')
 const moment = require('moment')
 

@@ -1,5 +1,5 @@
 const Orders = require('../dao/orders')
-const Users = require('../dao/users')
+const Users = require('../dao/user')
 const Books = require('../dao/books')
 
 module.exports = {
